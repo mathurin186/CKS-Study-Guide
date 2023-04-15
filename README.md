@@ -1,9 +1,8 @@
 # CKS-Study-Guide
 Study Guide for the Certified Kubernetes Security Specialist Exam
 
-
------------------------------------------------------------
 ##Exam Syllabus
+-----------------------------------------------------------
 | Topic	                                     | Weightage  | 
 | Cluster Setup	                             | 10%        |
 | Cluster Hardening	                         | 15%        |
