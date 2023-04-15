@@ -1,7 +1,8 @@
 # CKS-Study-Guide
 Study Guide for the Certified Kubernetes Security Specialist Exam
 
-##Exam Syllabus
+
+Exam Syllabus
 -----------------------------------------------------------
 | Topic	                                     | Weightage  | 
 | Cluster Setup	                             | 10%        |
@@ -11,7 +12,6 @@ Study Guide for the Certified Kubernetes Security Specialist Exam
 | Supply Chain Security	                     | 20%        |
 | Monitoring, Logging, and Runtime Security	 | 20%        |
 -----------------------------------------------------------
-
 
 --------------------------------------------------------
 ##Things to understand before going INTO your exam
