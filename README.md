@@ -45,4 +45,4 @@ Supply Chain Security
 
 Monitoring, Logging, and Runtime Securtiy
 
-[Enable Auditing] (https://kubernetes.io/docs/tasks/debug/debug-cluster/audit/)
+[Enable Auditing](https://kubernetes.io/docs/tasks/debug/debug-cluster/audit/)
