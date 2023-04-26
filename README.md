@@ -38,6 +38,10 @@ Cluster Hardening
 
 
 System Hardening
+AppArmor
+Commands to know:
+$ aa-status
+  -Will show all the profiles loaded into the application
 
 
 
