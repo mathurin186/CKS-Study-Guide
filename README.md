@@ -44,6 +44,10 @@ $ aa-status
   -Will show all the profiles loaded into the application
 
 
+Seccomp
+Used to white list syscalls
+Default profile location: /var/lib/kubelet/seccomp/profiles/
+
 
 Minimize Microservice Vulnerabilities
 
