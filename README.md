@@ -34,7 +34,8 @@ Cluster Setup
 
 
 Cluster Hardening
-
+Default location for the Kubelet file:
+/var/lib/kubelet/config.yaml
 
 
 System Hardening
