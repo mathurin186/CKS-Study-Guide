@@ -40,7 +40,7 @@ Default location for the Kubelet file:
 
 
 ##System Hardening
-AppArmor
+_AppArmor_
 Commands to know:
 $ aa-status
   -Will show all the profiles loaded into the application
