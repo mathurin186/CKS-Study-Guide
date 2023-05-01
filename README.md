@@ -59,11 +59,11 @@ Default profile location: /var/lib/kubelet/seccomp/profiles/
 
 
 
-Monitoring, Logging, and Runtime Securtiy
+##Monitoring, Logging, and Runtime Securtiy
 Three things will be on your exam. Don't skirt learning this as you will need to activate these on three different questions, Falco, AppArmor, Kubernetes Auditing.
 
-Falco
+_Falco_
 
-AppArmor
+_AppArmor_
 
 [Enable Auditing](https://kubernetes.io/docs/tasks/debug/debug-cluster/audit/)
