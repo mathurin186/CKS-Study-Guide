@@ -29,16 +29,16 @@ Things to understand before going INTO your exam
 Common Commands to Know going in to any CK[A/S/D]
 
 
-Cluster Setup
+##Cluster Setup
 
 
 
-Cluster Hardening
+##Cluster Hardening
 Default location for the Kubelet file:
 /var/lib/kubelet/config.yaml
 
 
-System Hardening
+##System Hardening
 AppArmor
 Commands to know:
 $ aa-status
@@ -50,11 +50,11 @@ Used to white list or block all syscalls
 Default profile location: /var/lib/kubelet/seccomp/profiles/
 
 
-Minimize Microservice Vulnerabilities
+##Minimize Microservice Vulnerabilities
 
 
 
-Supply Chain Security
+##Supply Chain Security
 
 
 
