@@ -46,7 +46,7 @@ $ aa-status
 
 
 Seccomp
-Used to white list syscalls
+Used to white list or block all syscalls
 Default profile location: /var/lib/kubelet/seccomp/profiles/
 
 
