@@ -45,7 +45,7 @@ $ aa-status
   -Will show all the profiles loaded into the application
 
 
-Seccomp
+[Seccomp](https://kubernetes.io/docs/tutorials/security/seccomp/)
 Used to white list or block all syscalls
 Default profile location: /var/lib/kubelet/seccomp/profiles/
 
