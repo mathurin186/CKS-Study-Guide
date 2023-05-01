@@ -41,6 +41,9 @@ Default location for the Kubelet file:
 
 ##System Hardening
 _AppArmor_
+Default directory for profiles:
+/etc/apparmor.d/
+
 Commands to know:
 $ aa-status
   -Will show all the profiles loaded into the application
