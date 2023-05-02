@@ -40,7 +40,7 @@ Default location for the Kubelet file:
 
 
 ##System Hardening
-_AppArmor_
+[_AppArmor_](https://kubernetes.io/docs/tutorials/security/apparmor/)
 Default directory for profiles:
 /etc/apparmor.d/
 
@@ -66,8 +66,8 @@ Default profile location: /var/lib/kubelet/seccomp/profiles/
 ##Monitoring, Logging, and Runtime Securtiy
 Three things will be on your exam. Don't skirt learning this as you will need to activate these on three different questions, Falco, AppArmor, Kubernetes Auditing.
 
-_Falco_
+[_Falco_](https://falco.org/docs/getting-started/installation/)
 
-_AppArmor_
+[_AppArmor_](https://kubernetes.io/docs/tutorials/security/apparmor/)
 
 [Enable Auditing](https://kubernetes.io/docs/tasks/debug/debug-cluster/audit/)
