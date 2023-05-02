@@ -45,7 +45,7 @@ Default location for the Kubelet file:
 Default directory for profiles:
 /etc/apparmor.d/
 
-Commands to know:
+Commands to know: [Also helpful here](https://ubuntu.com/server/docs/security-apparmor)
 $ aa-status
   -Will show all the profiles loaded into the application
 
