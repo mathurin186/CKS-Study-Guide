@@ -14,7 +14,7 @@ Exam Syllabus
 | Monitoring, Logging, and Runtime Security	 | 20%        |
 -----------------------------------------------------------
 
---------------------------------------------------------
+
 
 Things to understand before going INTO your exam
 
@@ -30,16 +30,16 @@ Things to understand before going INTO your exam
 Common Commands to Know going in to any CK[A/S/D]
 
 
-##Cluster Setup
+## Cluster Setup
 
 
 
-##Cluster Hardening
+## Cluster Hardening
 Default location for the Kubelet file:
 /var/lib/kubelet/config.yaml
 
 
-##System Hardening
+## System Hardening
 [_AppArmor_](https://kubernetes.io/docs/tutorials/security/apparmor/)
 Default directory for profiles:
 /etc/apparmor.d/
@@ -54,16 +54,16 @@ Used to white list or block all syscalls
 Default profile location: /var/lib/kubelet/seccomp/profiles/
 
 
-##Minimize Microservice Vulnerabilities
+## Minimize Microservice Vulnerabilities
 
 
 
-##Supply Chain Security
+## Supply Chain Security
 
 
 
 
-##Monitoring, Logging, and Runtime Securtiy
+## Monitoring, Logging, and Runtime Securtiy
 Three things will be on your exam. Don't skirt learning this as you will need to activate these on three different questions, Falco, AppArmor, Kubernetes Auditing.
 
 [_Falco_](https://falco.org/docs/getting-started/installation/)
