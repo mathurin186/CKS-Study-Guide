@@ -84,6 +84,17 @@ Default profile location: /var/lib/kubelet/seccomp/profiles/
 
 ## Minimize Microservice Vulnerabilities
 
+Trivy Scanning Engine
+* Aqua (boooooo), developed a free image scanner for anyone to use. Best to understand the syntax of container scanning with this bad boy:
+
+Ensure the tool is installed on your machine with:
+$ trivy --v
+
+As always you can see what your options are when scanning container images:
+$ trivy image -h
+
+THIS might be an example you'd need to know. The below command is 
+trivy image --severity HIGH python:3.6.12-alpine3.11 --output /root/python.txt
 
 
 ## Supply Chain Security
