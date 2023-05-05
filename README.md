@@ -66,6 +66,11 @@ Things to understand before going INTO your exam
 Default location for the Kubelet file:
 /var/lib/kubelet/config.yaml
 
+In order to find where the Kubelet file is at, run the ps -aux command:
+$ px -aux | grep kubelet
+
+* When making any changes to the Kubelet service, ensure to RESTART. 
+$ systemctl restart kubelet.service
 
 ## System Hardening
 [_AppArmor_](https://kubernetes.io/docs/tutorials/security/apparmor/)
@@ -116,4 +121,21 @@ Output can be saved in JSON or text, if the _json_output_ is set to false, then 
 
 
 [Enable Auditing](https://kubernetes.io/docs/tasks/debug/debug-cluster/audit/)
-* Make sure to make a copy of the Kube API yaml file (ex. /etc/kubernetes/manifests/kube-api.yaml) as you messing with this will likely result in kubectl not working anymore. Save your sanity by making a copy, and re-applying when you get too frustrated. 
+* Make sure to make a copy of the Kube API yaml file (ex. /etc/kubernetes/manifests/kube-api.yaml) as you messing with this will likely result in kubectl not working anymore. Save your sanity by making a copy, and re-applying when you get too frustrated.
+
+
+
+
+Updated notes from exam:
+Using Falco to find specicial process name, date, and user ID
+Using Apparmor to apply profile
+Trivy scan on all pods in a namespaces, delete pods with HIGH/CRITICAL errors
+
+Use of Secret
+
+Network Policy to only allow communication between two pods
+
+network policy to block all ingress
+
+Kubelet security, hardening the kubelet.
+
