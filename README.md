@@ -126,3 +126,8 @@ Ensure Immutability of Containers at Runtime
 
 [Enable Auditing](https://kubernetes.io/docs/tasks/debug/debug-cluster/audit/)
 * Make sure to make a copy of the Kube API yaml file (ex. /etc/kubernetes/manifests/kube-api.yaml) as you messing with this will likely result in kubectl not working anymore. Save your sanity by making a copy, and re-applying when you get too frustrated. 
+
+
+
+
+Written by Mathurin. If you're new to writing a simple README.md, venture [here](https://medium.com/@saumya.ranjan/how-to-write-a-readme-md-file-markdown-file-20cb7cbcd6f) for some good instructions. 
