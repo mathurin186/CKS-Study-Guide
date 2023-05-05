@@ -96,7 +96,7 @@ Ensure the tool is installed on your machine with:
 $ trivy --v
 
 As always you can see what your options are when scanning container images:
-$ trivy image -h
+$ trivy image -h`
 
 THIS might be an example you'd need to know. The below command is 
 trivy image --severity HIGH python:3.6.12-alpine3.11 --output /root/python.txt
