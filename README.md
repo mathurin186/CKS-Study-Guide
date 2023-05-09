@@ -82,6 +82,20 @@ Commands to know: [Also helpful here](https://ubuntu.com/server/docs/security-ap
 $ aa-status
   -Will show all the profiles loaded into the application
 
+$ apparmor_parsers <flag> <path to profile>
+  -will apply the profile to apparmor
+
+Ensure you apply the profile to your specified pod in the yaml file:
+_example_
+  apiVersion: v1
+  kind: Pod
+  metadata:
+    name: hello-apparmor
+    annotations:
+      # Tell Kubernetes to apply the AppArmor profile "k8s-apparmor-example-deny-write".
+      # Note that this is ignored if the Kubernetes node is not running version 1.4 or greater.
+      container.apparmor.security.beta.kubernetes.io/hello: localhost/k8s-apparmor-example-deny-write
+
 
 [Seccomp](https://kubernetes.io/docs/tutorials/security/seccomp/)
 Used to white list or block all syscalls
