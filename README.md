@@ -45,6 +45,7 @@ Things to understand before going INTO your exam
 | limits	   | limitranges                |
 | ns	       | namespaces                 |
 | no	       | nodes                      |
+| nopol      | network policy             |
 | pvc	       | persistentvolumeclaims     |
 | pv	       | persistentvolumes          |
 | po	       | pods                       |
