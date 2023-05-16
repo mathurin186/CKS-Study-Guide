@@ -59,11 +59,11 @@ Things to understand before going INTO your exam
 -----------------------------------------------------------
 
 
-## Cluster Setup
+## Cluster Setup & Hardening
 
-
-
-## Cluster Hardening
+### RBAC
+* check on users ability to perform a function in a namespaces or cluster:
+$ kubectl auth can-i get pods
 
 ### Kubelet Security
 Default location for the Kubelet file:
