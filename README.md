@@ -62,6 +62,8 @@ Things to understand before going INTO your exam
 ## Cluster Setup & Hardening
 
 ### RBAC
+Assuming you aren't one to sit through documentation, I found this video from [School of DevOps](https://www.redfin.com/CA/Pacifica/547-Vista-Mar-Ave-94044/home/1950478) to give a better way to simplify when you'd use Roles vs ClusterRoles.
+
 * check on users ability to perform a function in a namespaces or cluster:
 $ kubectl auth can-i get pods
 
