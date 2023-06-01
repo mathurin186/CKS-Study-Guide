@@ -66,7 +66,8 @@ You need to _PRACTICE!_ There is no way to pass this without getting your hands 
 -----------------------------------------------------------
 
 ## Troubleshooting Commands
-* k exec sec -- dmesg | grep -i gvisor        <Here we're able to inspect a pod to see if a runtiemclass has been applied>
+* k exec sec -- dmesg | grep -i gvisor        Here we're able to inspect a pod to see if a runtiemclass has been applied>
+* grep -ri "phrase you're looking for" /var/www/html      With anything Falco, you need to know how to search for specific rules in the multiple files. This will save you some time.
 
 
 ## Cluster Setup & Hardening
