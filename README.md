@@ -65,10 +65,20 @@ You need to _PRACTICE!_ There is no way to pass this without getting your hands 
 | svc	       | services                   |
 -----------------------------------------------------------
 
+
 ## Troubleshooting Commands
 * k exec sec -- dmesg | grep -i gvisor        Here we're able to inspect a pod to see if a runtiemclass has been applied>
 * grep -ri "phrase you're looking for" /var/www/html      With anything Falco, you need to know how to search for specific rules in the multiple files. This will save you some time.
 * kubectl get pods --as dev-user              Confirmation after you finish a section of RBAC is key to ensure you're completing everything. 
+
+
+## Log Locations
+
+/var/log/pods
+/var/log/containers
+crictl ps + crictl logs
+docker ps + docker logs (in case when Docker is used)
+kubelet logs: /var/log/syslog or journalctl
 
 
 ## Cluster Setup & Hardening
