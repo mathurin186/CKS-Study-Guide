@@ -105,6 +105,21 @@ $ systemctl restart kubelet.service
 
 ## System Hardening
 
+[Secrets](https://kubernetes.io/docs/concepts/configuration/secret/)
+
+[Decode Secrets](https://kubernetes.io/docs/tasks/configmap-secret/managing-secret-using-kubectl/#decoding-secret)
+You will no doubt create secrets in the exam, but you should verify if they actually took.
+Ex. 
+Applying the below command will show data, but it is already encrypted:
+$ kubectl get secret db-user-pass -o jsonpath='{.data}'
+
+output:
+{ "password": "UyFCXCpkJHpEc2I9", "username": "YWRtaW4=" }
+
+In order to decode, you'll need to run this command with Base64
+$ kubectl get secret db-user-pass -o jsonpath='{.data.password}' | base64 --decode
+
+
 ### Kubesec
 $ kubesec scan pod.yaml
 
