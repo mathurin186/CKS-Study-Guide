@@ -86,6 +86,18 @@ kubelet logs: /var/log/syslog or journalctl
 ### RBAC
 Assuming you aren't one to sit through documentation, I found this video from [School of DevOps](https://www.redfin.com/CA/Pacifica/547-Vista-Mar-Ave-94044/home/1950478) to give a better way to simplify when you'd use Roles vs ClusterRoles.
 
+A ClusterRole|Role defines a set of permissions and where it is available, in the whole cluster or just a single Namespace.
+
+A ClusterRoleBinding|RoleBinding connects a set of permissions with an account and defines where it is applied, in the whole cluster or just a single Namespace.
+
+Because of this there are 4 different RBAC combinations and 3 valid ones:
+
+* Role + RoleBinding (available in single Namespace, applied in single Namespace)
+* ClusterRole + ClusterRoleBinding (available cluster-wide, applied cluster-wide)
+* ClusterRole + RoleBinding (available cluster-wide, applied in single Namespace)
+* Role + ClusterRoleBinding (NOT POSSIBLE: available in single Namespace, applied cluster-wide)
+
+
 * check on users ability to perform a function in a namespaces or cluster:
 $ kubectl auth can-i get pods
 
