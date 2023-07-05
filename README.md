@@ -101,6 +101,10 @@ Because of this there are 4 different RBAC combinations and 3 valid ones:
 * check on users ability to perform a function in a namespaces or cluster:
 $ kubectl auth can-i get pods
 
+### Network Policies
+I am not a fan of networking, but with Kubernetes, there's no way around it. Lucky, there are others who have issues as well and have developed a tool to help out create a Network Policy:
+[Network Policy Editor](https://editor.networkpolicy.io/)
+
 ### Kubelet Security
 Default location for the Kubelet file:
 /var/lib/kubelet/config.yaml
