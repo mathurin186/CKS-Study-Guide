@@ -21,7 +21,8 @@ Things to understand before going INTO your exam
 
 * Don't even think, immediately ensure that you have [Auto Complete and Alias's](https://kubernetes.io/docs/reference/kubectl/cheatsheet/) set up for speedy typing of commands. kubectl create can be a bitch when you're on a time limit.
 * Ensure that you have a mouse with you for faster COPY/PASTE actions during the exam. Don't count on the key commands as they are different with the Virtual Machine given to you. 
-* You will NOT be able to have a browser with preorganized bookmarks. There will be a virtual desktop that you can access to dive into the kubernetes documentation page.
+* You will NOT be able to have a browser with preorganized bookmarks. There will be a virtual desktop that you can access to dive into the kubernetes documentation page. Always, and I mean ALWAYS, ensure that when you're working with the Kube API Yaml, you copy commands and directlt/file paths from the instructions to the
+ file. Don't think that in your tired state you'll be able to remember every key.
 * Speed is the key, there is no time to get lost in a question. Look at each question and make the ones you think will take longer than two min to fix.
 * When you move to a new question, ensure that you IMMEDIATELY switch contexts. From there, read the entire question as sometimes they will provide a pre-filled out template at the very bottom of the page. 
 * To edit any pod that's running, copy the contents of the active pod, then paste to a new Yaml file and create. 
