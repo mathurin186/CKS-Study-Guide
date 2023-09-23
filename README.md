@@ -70,6 +70,7 @@ You need to _PRACTICE!_ There is no way to pass this without getting your hands 
 * k exec sec -- dmesg | grep -i gvisor        Here we're able to inspect a pod to see if a runtiemclass has been applied>
 * grep -ri "phrase you're looking for" /var/www/html      With anything Falco, you need to know how to search for specific rules in the multiple files. This will save you some time.
 * kubectl get pods --as dev-user              Confirmation after you finish a section of RBAC is key to ensure you're completing everything. 
+* kubectl auth can-i get pods
 
 
 ## Log Locations
@@ -104,6 +105,8 @@ $ kubectl auth can-i get pods
 ### Network Policies
 I am not a fan of networking, but with Kubernetes, there's no way around it. Lucky, there are others who have issues as well and have developed a tool to help out create a Network Policy:
 [Network Policy Editor](https://editor.networkpolicy.io/)
+
+
 
 ### Kubelet Security
 Default location for the Kubelet file:
@@ -150,6 +153,7 @@ $ kubesec scan pod.yaml -o pod_report.json -o json
 ### [_AppArmor_](https://kubernetes.io/docs/tutorials/security/apparmor/)
 Default directory for profiles:
 /etc/apparmor.d/
+* AppArmor profiles will need to be applied to each node in the cluster. SCP the profile itself to the node of your choice then run the following:
 
 Commands to know: [Also helpful here](https://ubuntu.com/server/docs/security-apparmor)
 $ aa-status
@@ -164,7 +168,7 @@ _example_
   kind: Pod
   metadata:
     name: hello-apparmor
-    annotations:
+    annotations:                                                      <-- THIS IS WHERE IT GOES
       # Tell Kubernetes to apply the AppArmor profile "k8s-apparmor-example-deny-write".
       # Note that this is ignored if the Kubernetes node is not running version 1.4 or greater.
       container.apparmor.security.beta.kubernetes.io/hello: localhost/k8s-apparmor-example-deny-write
@@ -222,4 +226,5 @@ $ grep -ir 'Package management process launched in container' /etc/falco/
 
 
 
-Written by Mathurin. If you're new to writing a simple README.md, venture [here](https://medium.com/@saumya.ranjan/how-to-write-a-readme-md-file-markdown-file-20cb7cbcd6f) for some good instructions. 
+Written by Mathurin. 
+If you're new to writing a simple README.md, venture [here](https://medium.com/@saumya.ranjan/how-to-write-a-readme-md-file-markdown-file-20cb7cbcd6f) for some good instructions. 
