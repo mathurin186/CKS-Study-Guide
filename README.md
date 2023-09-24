@@ -15,19 +15,6 @@ Exam Syllabus
 | Monitoring, Logging, and Runtime Security	 | 20%        |
 -----------------------------------------------------------
 
-
-
-Things to understand before going INTO your exam
-
-* Ensure that you have a mouse with you for faster COPY/PASTE actions during the exam. Don't count on the key commands as they are different with the Virtual Machine given to you. 
-* You will NOT be able to have a browser with preorganized bookmarks. There will be a virtual desktop that you can access to dive into the kubernetes documentation page. Always, and I mean ALWAYS, ensure that when you're working with the Kube API Yaml, you copy commands and directlt/file paths from the instructions to the
- file. Don't think that in your tired state you'll be able to remember every key.
-* Speed is the key, there is no time to get lost in a question. Look at each question and mark the questions you think will take longer than two min to fix.
-* When you move to a new question, ensure that you IMMEDIATELY switch contexts. From there, read the entire question as sometimes they will provide a pre-filled out template at the very bottom of the page. 
-* When editing the KubeAPI config, ensure that you make a copy first. This will ensure that you're prepared incase the worst happens.
-* Understand that because time is NOT on your side, you will need to cut corners for deploying/editing cluster info. Because of this, I encourage you to learn more Imperial Commands which you can reference the official kubernetes guide [here](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#run). 
-
-
 ## Learning Path and Testing Environments 
 You need to _PRACTICE!_ There is no way to pass this without getting your hands dirty. Because of that, here are a few:
 1. [Killercoda](/killercoda.com)
@@ -40,6 +27,17 @@ You need to _PRACTICE!_ There is no way to pass this without getting your hands 
 3. [Trivy](https://github.com/aquasecurity/trivy)
 4. [falco](https://falco.org/docs/)
 5. [apparmor](https://gitlab.com/apparmor/apparmor/-/wikis/Documentation)
+
+
+Things to understand before going INTO your exam
+
+* Ensure that you have a mouse with you for faster COPY/PASTE actions during the exam. Don't count on the key commands as they are different with the Virtual Machine given to you. 
+* You will NOT be able to have a browser with preorganized bookmarks. There will be a virtual desktop that you can access to dive into the kubernetes documentation page. Always, and I mean ALWAYS, ensure that when you're working with the Kube API Yaml, you copy commands and directlt/file paths from the instructions to the
+ file. Don't think that in your tired state you'll be able to remember every key.
+* Speed is the key, there is no time to get lost in a question. Look at each question and mark the questions you think will take longer than two min to fix.
+* When you move to a new question, ensure that you IMMEDIATELY switch contexts. From there, read the entire question as sometimes they will provide a pre-filled out template at the very bottom of the page. 
+* When editing the KubeAPI config, ensure that you make a copy first. This will ensure that you're prepared incase the worst happens.
+* Understand that because time is NOT on your side, you will need to cut corners for deploying/editing cluster info. Because of this, I encourage you to learn more Imperial Commands which you can reference the official kubernetes guide [here](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#run). 
 
 
 ## Common Commands to Know going in to any CK[A/S/D]
