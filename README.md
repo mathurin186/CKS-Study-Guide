@@ -183,7 +183,24 @@ Default profile location: /var/lib/kubelet/seccomp/profiles/
 
 ## Minimize Microservice Vulnerabilities
 ### [gvisor runtime] (https://kubernetes.io/docs/concepts/containers/runtime-class/)
+* the runtime engine will be already installed on the machines for this exam. You will need to create a yaml and apply to the cluster. Important for you to understand, for handler, you have to specify runsc for gvisor to run on the cluster. 
 
+apiVersion: node.k8s.io/v1
+kind: RuntimeClass
+metadata:
+  name: gvisor 
+handler: runsc 
+
+* When this is applied, you will need to enable pods/deployments this particular way:
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mypod
+spec:
+  runtimeClassName: gvisor
+
+Note: When applying gvisor runtime to a pod and the edit is not taking, either gvisor is not configured correctly or you are applying in the wrong spec. Look again.
 
 
 ## Supply Chain Security
