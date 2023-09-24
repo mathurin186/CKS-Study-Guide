@@ -28,14 +28,18 @@ Things to understand before going INTO your exam
 * Understand that because time is NOT on your side, you will need to cut corners for deploying/editing cluster info. Because of this, I encourage you to learn more Imperial Commands which you can reference the official kubernetes guide [here](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#run). 
 
 
-## Testing Environments 
+## Learning Path and Testing Environments 
 You need to _PRACTICE!_ There is no way to pass this without getting your hands dirty. Because of that, here are a few:
 1. [Killercoda](/killercoda.com)
 2. [Killer.sh](killer.sh)
 3. [KodeKloud](https://kodekloud.com/)
-4. [Kubernetes Documentations](https://kubernetes.io/docs/home/)
-5. [Kubernetes Blog](https://kubernetes.io/blog/)
 
+## Documentation Pages Allowed During Exam
+1. [Kubernetes Documentations](https://kubernetes.io/docs/home/)
+2. [Kubernetes Blog](https://kubernetes.io/blog/)
+3. [Trivy](https://github.com/aquasecurity/trivy)
+4. [falco](https://falco.org/docs/)
+5. [apparmor](https://gitlab.com/apparmor/apparmor/-/wikis/Documentation)
 
 
 ## Common Commands to Know going in to any CK[A/S/D]
