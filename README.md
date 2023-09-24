@@ -110,6 +110,45 @@ $ kubectl auth can-i get pods
 ### Network Policies
 I am not a fan of networking, but with Kubernetes, there's no way around it. Lucky, there are others who have issues as well and have developed a tool to help out create a Network Policy:
 [Network Policy Editor](https://editor.networkpolicy.io/)
+Think of the network policy as something you apply to a pod or specific set of pods. You can have multiple assigned to one pod if need be or just one. When you deploy a pod, it has access to everything else in that namespace by default, and this is not what we want in the security space. Here is an example taken from [kubernetes documentation](https://kubernetes.io/docs/concepts/services-networking/network-policies/#networkpolicy-resource):
+
+```
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: test-network-policy
+  namespace: default
+spec:
+  podSelector:                    # this is what you want to apply this particular policy to, and ensure that you are using the labels associated with that pod. ex. k describe pod 
+    matchLabels:
+      role: db
+  policyTypes:
+    - Ingress
+    - Egress
+  ingress:
+    - from:
+        - ipBlock:
+            cidr: 172.17.0.0/16
+            except:
+              - 172.17.1.0/24
+        - namespaceSelector:
+            matchLabels:
+              project: myproject
+        - podSelector:
+            matchLabels:
+              role: frontend
+      ports:
+        - protocol: TCP
+          port: 6379
+  egress:
+    - to:
+        - ipBlock:
+            cidr: 10.0.0.0/24
+      ports:
+        - protocol: TCP
+          port: 5978
+
+```
 
 
 
