@@ -33,6 +33,7 @@ You need to _PRACTICE!_ There is no way to pass this without getting your hands 
 1. [Killercoda](/killercoda.com)
 2. [Killer.sh](killer.sh)
 3. [KodeKloud](https://kodekloud.com/)
+4. [Kubernetes Documentations](https://kubernetes.io/docs/home/)
 
 
 
@@ -79,7 +80,8 @@ You need to _PRACTICE!_ There is no way to pass this without getting your hands 
 /var/log/containers
 crictl ps + crictl logs
 docker ps + docker logs (in case when Docker is used)
-kubelet logs: /var/log/syslog or journalctl
+/var/log/syslog or journalctl
+journalctl -fu falco
 
 
 ## Cluster Setup & Hardening
