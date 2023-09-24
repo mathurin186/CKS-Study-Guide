@@ -150,6 +150,33 @@ spec:
 
 ```
 
+Important to know for the exam since there are multiple questions with Network Policies. Look at these two examples:
+
+```
+  ingress:
+  - from:
+    - namespaceSelector:
+        matchLabels:
+          user: alice
+      podSelector:
+        matchLabels:
+          role: client
+```
+
+and: 
+
+```
+  ingress:
+  - from:
+    - namespaceSelector:
+        matchLabels:
+          user: alice
+    - podSelector:
+        matchLabels:
+          role: client
+```
+
+In the above exmaple, you are setting a policy to recieve traffic from pods with labels role=client in the namespace user=alice. The following ingress policy states that your pod will get traffic from namespace alice, and any pod with the label role=client.
 
 
 ### Kubelet Security
