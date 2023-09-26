@@ -177,6 +177,7 @@ and:
 ```
 
 In the above exmaple, you are setting a policy to recieve traffic from pods with labels role=client in the namespace user=alice. The following ingress policy states that your pod will get traffic from namespace alice, and any pod with the label role=client.
+* hint hint *
 
 
 ### Kubelet Security
@@ -192,6 +193,15 @@ $ systemctl restart kubelet.service
 
 ### Service Accounts
 * If you add a Service Account to a pod, you MUST re-create the pod as you won't be able to edit a running instance.
+* If you don't want the kubelet to automatically mount a ServiceAccount's API credentials, you can opt out of the default behavior. You can opt out of automounting API credentials on /var/run/secrets/kubernetes.io/serviceaccount/token for a service account by setting automountServiceAccountToken: false on the ServiceAccount:
+
+```
+spec:
+  serviceAccountName: custom
+  automountServiceAccountToken: false
+  containers:
+  - name: webserver
+```
 
 ## System Hardening
 
