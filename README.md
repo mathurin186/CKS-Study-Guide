@@ -281,12 +281,15 @@ metadata:
 spec:
   runtimeClassName: gvisor
 ```
-Note: When applying gvisor runtime to a pod and the edit is not taking, either gvisor is not configured correctly or you are applying in the wrong spec. Look again.
+Note: When applying gvisor runtime to a deployment and the edit is not taking, either gvisor is not configured correctly or you are applying in the wrong spec. Look again.
 
 
 ## Supply Chain Security
 ### Trivy Scanning Engine
 * Aqua (boooooo), developed a free image scanner for anyone to use. Best to understand the syntax of container scanning with this bad boy:
+
+To begin, make your life easier with the command below to pull the image faster than kubectl edit.
+$ k get pod -oyaml | grep image:
 
 Ensure the tool is installed on your machine with:
 $ trivy --v
