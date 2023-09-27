@@ -40,7 +40,7 @@ Things to understand before going INTO your exam
 * Understand that because time is NOT on your side, you will need to cut corners for deploying/editing cluster info. Because of this, I encourage you to learn more Imperial Commands which you can reference the official kubernetes guide [here](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#run). 
 
 
-## Common Commands to Know going in to any CK[A/S/D]
+## [Common Commands](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#run) to Know going in to any CK[A/S/D]
 -----------------------------------------------------------
 | Short Name |       Full Name            |
 |------------|----------------------------|
@@ -90,7 +90,7 @@ journalctl -fu falco
 ## Cluster Setup & Hardening
 
 ### RBAC
-Take your time and review the documentation on (Kubernetes RBAC)[https://kubernetes.io/docs/reference/access-authn-authz/rbac/]. Understanding the differences between Role and ClusterRole will help you on the exam. (Sysdig Explaination)[https://sysdig.com/learn-cloud-native/kubernetes-security/kubernetes-rbac/#:~:text=In%20Kubernetes%2C%20RBAC%20policies%20can,Kubernetes%20identifies%20as%20service%20accounts.]
+Take your time and review the documentation on [Kubernetes RBAC](https://kubernetes.io/docs/reference/access-authn-authz/rbac/). Understanding the differences between Role and ClusterRole will help you on the exam. [Sysdig Explaination](https://sysdig.com/learn-cloud-native/kubernetes-security/kubernetes-rbac/#:~:text=In%20Kubernetes%2C%20RBAC%20policies%20can,Kubernetes%20identifies%20as%20service%20accounts.)
 
 A ClusterRole|Role defines a set of permissions and where it is available, in the whole cluster or just a single Namespace.
 
