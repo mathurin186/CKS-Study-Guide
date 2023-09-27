@@ -90,22 +90,18 @@ journalctl -fu falco
 ## Cluster Setup & Hardening
 
 ### RBAC
-Take your time and review the documentation on Kubernetes RBAC. Understanding the differences between Role and ClusterRole will help you on the exam. 
+Take your time and review the documentation on (Kubernetes RBAC)[https://kubernetes.io/docs/reference/access-authn-authz/rbac/]. Understanding the differences between Role and ClusterRole will help you on the exam. (Sysdig Explaination)[https://sysdig.com/learn-cloud-native/kubernetes-security/kubernetes-rbac/#:~:text=In%20Kubernetes%2C%20RBAC%20policies%20can,Kubernetes%20identifies%20as%20service%20accounts.]
 
 A ClusterRole|Role defines a set of permissions and where it is available, in the whole cluster or just a single Namespace.
 
 A ClusterRoleBinding|RoleBinding connects a set of permissions with an account and defines where it is applied, in the whole cluster or just a single Namespace.
 
-Because of this there are 4 different RBAC combinations and 3 valid ones:
+Because of this there are 4 different RBAC combinations:
 
-* Role + RoleBinding (available in single Namespace, applied in single Namespace)
-* ClusterRole + ClusterRoleBinding (available cluster-wide, applied cluster-wide)
-* ClusterRole + RoleBinding (available cluster-wide, applied in single Namespace)
-* Role + ClusterRoleBinding (NOT POSSIBLE: available in single Namespace, applied cluster-wide)
-
-
-* check on users ability to perform a function in a namespaces or cluster:
-$ kubectl auth can-i get pods
+1. Role + RoleBinding (available in single Namespace, applied in single Namespace)
+1. ClusterRole + ClusterRoleBinding (available cluster-wide, applied cluster-wide)
+1. ClusterRole + RoleBinding (available cluster-wide, applied in single Namespace)
+1. Role + ClusterRoleBinding (NOT POSSIBLE: available in single Namespace, applied cluster-wide)
 
 ### Network Policies
 I am not a fan of networking, but with Kubernetes, there's no way around it. Lucky, there are others who have issues as well and have developed a tool to help out create a Network Policy:
