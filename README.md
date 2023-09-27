@@ -181,11 +181,14 @@ Default location for the Kubelet file:
 /var/lib/kubelet/config.yaml
 
 In order to find where the Kubelet file is at, run the ps -aux command:
+```
 $ px -aux | grep kubelet
+```
 
-* When making any changes to the Kubelet service, ensure to RESTART. 
+* When making any changes to the Kubelet service, ensure to RESTART.
+```
 $ systemctl restart kubelet.service
-
+```
 
 ### Service Accounts
 * If you add a Service Account to a pod, you MUST re-create the pod as you won't be able to edit a running instance.
