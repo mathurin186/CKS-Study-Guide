@@ -207,7 +207,10 @@ spec:
 You will no doubt create secrets in the exam, but you should verify if they actually took.
 Ex. 
 Applying the below command will show data, but it is already encrypted:
+
+```
 $ kubectl get secret db-user-pass -o jsonpath='{.data}'
+```
 
 output:
 { "password": "UyFCXCpkJHpEc2I9", "username": "YWRtaW4=" }
