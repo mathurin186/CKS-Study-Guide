@@ -291,17 +291,28 @@ Note: When applying gvisor runtime to a deployment and the edit is not taking, e
 * Aqua (boooooo), developed a free image scanner for anyone to use. Best to understand the syntax of container scanning with this bad boy:
 
 To begin, make your life easier with the command below to pull the image faster than kubectl edit.
+
+```
 $ k get pod -oyaml | grep image:
+```
 
 Ensure the tool is installed on your machine with:
+
+```
 $ trivy --v
+```
 
 As always you can see what your options are when scanning container images:
-$ trivy image -h`
+
+```
+$ trivy image -h
+```
 
 THIS might be an example you'd need to know. The below command is 
-trivy image --severity HIGH python:3.6.12-alpine3.11 --output /root/python.txt
 
+```
+trivy image --severity HIGH python:3.6.12-alpine3.11 --output /root/python.txt
+```
 
 
 
