@@ -339,7 +339,57 @@ ENTRYPOINT ["/myapp"]
 
 This is now the correct change to make a more secure footprint.
 
+### ImagePolicyWebhook
+The [ImagePolicyWebhook](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#imagepolicywebhook) admission controller allows a backend webhook to make admission decisions. This admission controller is disabled by default.
 
+This part is tricky due to modifying the kube-api manifest file. As being said before, making any edits to the manifest file will require a restart which is done automatically. What you'll need to do:
+1. Define a admission_config file (yaml or json) 
+1. kubeconf file that points to the correct server
+1. ImagePolicyWebhook admission plugin that's enabled in the kube-api manifest file
+
+Exmaple of /etc/kubernetes/policywebhook/admission_config.json
+```
+{
+   "apiVersion": "apiserver.config.k8s.io/v1",
+   "kind": "AdmissionConfiguration",
+   "plugins": [
+      {
+         "name": "ImagePolicyWebhook",
+         "configuration": {
+            "imagePolicy": {
+               "kubeConfigFile": "/etc/kubernetes/policywebhook/kubeconf",
+               "allowTTL": 100,
+               "denyTTL": 50,
+               "retryBackoff": 500,
+               "defaultAllow": false
+            }
+         }
+      }
+   ]
+}
+```
+
+The /etc/kubernetes/policywebhook/kubeconf should contain the correct server:
+```
+apiVersion: v1
+kind: Config
+clusters:
+- cluster:
+    certificate-authority: /etc/kubernetes/policywebhook/external-cert.pem
+    server: https://localhost:1234
+  name: image-checker
+...
+```
+
+Kubeapi config needs to have the ImagePolicyWebhook admission plugin:
+```
+spec:
+  containers:
+  - command:
+    - kube-apiserver
+    - --enable-admission-plugins=NodeRestriction,ImagePolicyWebhook
+    - --admission-control-config-file=/etc/kubernetes/policywebhook/admission_config.json
+```
 
 ## Monitoring, Logging, and Runtime Securtiy
 Three things will be on your exam. Don't skirt learning this as you will need to activate these on three different questions, Falco, AppArmor, Kubernetes Auditing.
