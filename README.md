@@ -314,6 +314,31 @@ THIS might be an example you'd need to know. The below command is
 trivy image --severity HIGH python:3.6.12-alpine3.11 --output /root/python.txt
 ```
 
+### Minimize Base Image Footprint
+* You will be presented with a dockerfile and YAML file with requirements to change two parts of each file so that it meets the minimum standard for security. As a refresher, here is a link to Sysdig's [Top 20 Dockerfile Best Practices](https://sysdig.com/blog/dockerfile-best-practices/)
+
+```
+FROM alpine:latest
+# Create user and set ownership and permissions as required
+RUN adduser -D myuser && chown -R myuser /myapp-data
+# ... copy application files
+USER root
+ENTRYPOINT ["/myapp"]
+```
+
+Take a look at the above example. If you are being asked to change a few commands from the above, what stands out? You will need to specify a specific version of the base OS, and NEVER RUN AS ROOT!
+
+```
+FROM alpine:3.12
+# Create user and set ownership and permissions as required
+RUN adduser -D myuser && chown -R myuser /myapp-data
+# ... copy application files
+USER myuser
+ENTRYPOINT ["/myapp"]
+```
+
+This is now the correct change to make a more secure footprint.
+
 
 
 ## Monitoring, Logging, and Runtime Securtiy
