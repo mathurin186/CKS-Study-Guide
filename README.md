@@ -178,7 +178,9 @@ In the above exmaple, you are setting a policy to recieve traffic from pods with
 
 ### Kubelet Security
 Default location for the Kubelet file:
+```
 /var/lib/kubelet/config.yaml
+```
 
 In order to find where the Kubelet file is at, run the ps -aux command:
 ```
