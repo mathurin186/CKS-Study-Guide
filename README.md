@@ -37,7 +37,7 @@ Things to understand before going INTO your exam
 * Speed is the key, there is no time to get lost in a question. Look at each question and mark the questions you think will take longer than two min to fix.
 * When you move to a new question, ensure that you IMMEDIATELY switch contexts. From there, read the entire question as sometimes they will provide a pre-filled out template at the very bottom of the page. 
 * When editing the KubeAPI config, ensure that you make a copy first. This will ensure that you're prepared incase the worst happens.
-* Understand that because time is NOT on your side, you will need to cut corners for deploying/editing cluster info. Because of this, I encourage you to learn more Imperial Commands which you can reference the official kubernetes guide [here](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#run). 
+* Understand that because time is NOT on your side, you will need to cut corners for deploying/editing cluster info. Because of this, I encourage you to learn more Imperative Commands which you can reference the official kubernetes guide [here](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#run). 
 
 
 ## [Common Commands](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#run) to Know going in to any CK[A/S/D]
