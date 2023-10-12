@@ -206,7 +206,7 @@ spec:
 
 ## System Hardening
 
-###[Secrets](https://kubernetes.io/docs/concepts/configuration/secret/)
+### [Secrets](https://kubernetes.io/docs/concepts/configuration/secret/)
 
 [Decode Secrets](https://kubernetes.io/docs/tasks/configmap-secret/managing-secret-using-kubectl/#decoding-secret)
 You will no doubt create secrets in the exam, but you should verify if they actually took.
