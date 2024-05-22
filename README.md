@@ -60,9 +60,9 @@ Things to understand before going INTO your exam
 
 ## Troubleshooting Commands
 * ```k exec sec -- dmesg | grep -i gvisor ```    Here we're able to inspect a pod to see if a runtiemclass has been applied     
-* grep -ri "phrase you're looking for" /var/www/html      With anything Falco, you need to know how to search for specific rules in the multiple files. This will save you some time.
-* kubectl get pods --as dev-user              Confirmation after you finish a section of RBAC is key to ensure you're completing everything. 
-* kubectl auth can-i get pods
+* ```grep -ri "phrase you're looking for" /var/www/html```      With anything Falco, you need to know how to search for specific rules in the multiple files. This will save you some time.
+* ```kubectl get pods --as dev-user```              Confirmation after you finish a section of RBAC is key to ensure you're completing everything. 
+* ```kubectl auth can-i get pods```
 
 
 ## Log Locations
