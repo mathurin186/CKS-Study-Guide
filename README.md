@@ -209,19 +209,19 @@ output:
 { "password": "UyFCXCpkJHpEc2I9", "username": "YWRtaW4=" }
 
 In order to decode, you'll need to run this command with Base64
-$ kubectl get secret db-user-pass -o jsonpath='{.data.password}' | base64 --decode
+```$ kubectl get secret db-user-pass -o jsonpath='{.data.password}' | base64 --decode```
 
 
-### Kubesec
-$ kubesec scan pod.yaml
+### [Kubesec](https://kubesec.io/)
+```$ kubesec scan pod.yaml```
 
 Using online kubesec API
 $ curl -sSX POST --data-binary @pod.yaml https://v2.kubesec.io/scan
 
 Running the API locally
-$ kubesec http 8080 &
+$ ```kubesec http 8080 &```
 
-$ kubesec scan pod.yaml -o pod_report.json -o json
+$ ```kubesec scan pod.yaml -o pod_report.json -o json```
 
 ### [_AppArmor_](https://kubernetes.io/docs/tutorials/security/apparmor/)
 Default directory for profiles:
@@ -229,11 +229,11 @@ Default directory for profiles:
 * AppArmor profiles will need to be applied to each node in the cluster. SCP the profile itself to the node of your choice then run the following:
 
 Commands to know: [Also helpful here](https://ubuntu.com/server/docs/security-apparmor)
-$ aa-status
-  -Will show all the profiles loaded into the application
+$ ```aa-status```
+  - Will show all the profiles loaded into the application
 
-$ apparmor_parsers <flag> <path to profile>
-  -will apply the profile to apparmor
+$ ```apparmor_parsers <flag> <path to profile>```
+  - will apply the profile to apparmor
 
 Ensure you apply the profile to your specified pod in the yaml file:
 ```
