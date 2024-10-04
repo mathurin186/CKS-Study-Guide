@@ -59,10 +59,10 @@ Things to understand before going INTO your exam
 
 
 ## Troubleshooting Commands
-* k exec sec -- dmesg | grep -i gvisor     Here we're able to inspect a pod to see if a runtiemclass has been applied     
-* grep -ri "phrase you're looking for" /var/www/html      With anything Falco, you need to know how to search for specific rules in the multiple files. This will save you some time.
-* kubectl get pods --as dev-user              Confirmation after you finish a section of RBAC is key to ensure you're completing everything. 
-* kubectl auth can-i get pods
+* ```k exec sec -- dmesg | grep -i gvisor ```    Here we're able to inspect a pod to see if a runtiemclass has been applied     
+* ```grep -ri "phrase you're looking for" /var/www/html```      With anything Falco, you need to know how to search for specific rules in the multiple files. This will save you some time.
+* ```kubectl get pods --as dev-user```              Confirmation after you finish a section of RBAC is key to ensure you're completing everything. 
+* ```kubectl auth can-i get pods```
 
 
 ## Log Locations
@@ -209,19 +209,19 @@ output:
 { "password": "UyFCXCpkJHpEc2I9", "username": "YWRtaW4=" }
 
 In order to decode, you'll need to run this command with Base64
-$ kubectl get secret db-user-pass -o jsonpath='{.data.password}' | base64 --decode
+```$ kubectl get secret db-user-pass -o jsonpath='{.data.password}' | base64 --decode```
 
 
-### Kubesec
-$ kubesec scan pod.yaml
+### [Kubesec](https://kubesec.io/)
+```$ kubesec scan pod.yaml```
 
 Using online kubesec API
 $ curl -sSX POST --data-binary @pod.yaml https://v2.kubesec.io/scan
 
 Running the API locally
-$ kubesec http 8080 &
+$ ```kubesec http 8080 &```
 
-$ kubesec scan pod.yaml -o pod_report.json -o json
+$ ```kubesec scan pod.yaml -o pod_report.json -o json```
 
 ### [_AppArmor_](https://kubernetes.io/docs/tutorials/security/apparmor/)
 Default directory for profiles:
@@ -229,11 +229,11 @@ Default directory for profiles:
 * AppArmor profiles will need to be applied to each node in the cluster. SCP the profile itself to the node of your choice then run the following:
 
 Commands to know: [Also helpful here](https://ubuntu.com/server/docs/security-apparmor)
-$ aa-status
-  -Will show all the profiles loaded into the application
+$ ```aa-status```
+  - Will show all the profiles loaded into the application
 
-$ apparmor_parsers <flag> <path to profile>
-  -will apply the profile to apparmor
+$ ```apparmor_parsers <flag> <path to profile>```
+  - will apply the profile to apparmor
 
 Ensure you apply the profile to your specified pod in the yaml file:
 ```
