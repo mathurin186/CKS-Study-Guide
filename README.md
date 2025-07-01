@@ -165,6 +165,8 @@ In the above exmaple, you are setting a policy to recieve traffic from pods with
 
 
 ### Kubelet Security
+Ports: 10250 (Service API with full access, 10255 (Servive that allows unauthenticated Read Only access)
+
 Default location for the Kubelet file:
 ```
 /var/lib/kubelet/config.yaml
