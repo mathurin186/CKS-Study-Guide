@@ -331,6 +331,12 @@ ENTRYPOINT ["/myapp"]
 
 This is now the correct change to make a more secure footprint.
 
+### Creating Containers to Share PID
+```
+podman run --name app1 -d nginx:alpine sleep infinity
+podman run --name app2 --pid=container:app1 -d nginx:alpine sleep infinity
+```
+
 ### ImagePolicyWebhook
 The [ImagePolicyWebhook](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#imagepolicywebhook) admission controller allows a backend webhook to make admission decisions. This admission controller is disabled by default.
 
