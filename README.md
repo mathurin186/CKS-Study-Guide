@@ -1,6 +1,6 @@
 
 # CKS-Study-Guide
-  ![CKS](https://devopscube.com/wp-content/uploads/2021/04/CKS-Certification-min.png)
+  ![CKS](https://devopscube.com/cks-exam-guide-tips/)
 
 Study Guide for the Certified Kubernetes Security Specialist Exam
 Exam Syllabus
