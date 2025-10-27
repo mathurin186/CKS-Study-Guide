@@ -223,7 +223,7 @@ $ curl -sSX POST --data-binary @pod.yaml https://v2.kubesec.io/scan
 Running the API locally
 $ ```kubesec http 8080 &```
 
-$ ```kubesec scan pod.yaml -o pod_report.json -o json```
+$ ```kubesec scan pod.yaml -o pod_report.json```
 
 ### [_AppArmor_](https://kubernetes.io/docs/tutorials/security/apparmor/)
 Default directory for profiles:
