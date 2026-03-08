@@ -163,6 +163,45 @@ and:
 In the above exmaple, you are setting a policy to recieve traffic from pods with labels role=client in the namespace user=alice. The following ingress policy states that your pod will get traffic from namespace alice, and any pod with the label role=client.
 * hint hint *
 
+### Ingress 
+After creating an [Ingress Resource](https://kubernetes.io/docs/concepts/services-networking/ingress/#the-ingress-resource), you will likely need to secure with TLS. First, you’ll want to create a secret with the certificate and key:
+```
+apiVersion: v1
+kind: Secret
+metadata:
+  name: testsecret-tls
+  namespace: default
+data:
+  tls.crt: base64 encoded cert
+  tls.key: base64 encoded key
+type: kubernetes.io/tls
+```
+
+After creation, you’ll need to edit an existing Ingress Resource to include the TLS security
+
+```
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: tls-example-ingress
+spec:
+  tls:
+  - hosts:
+      - https-example.foo.com
+    secretName: testsecret-tls
+  rules:
+  - host: https-example.foo.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: service1
+            port:
+              number: 80
+```
+
 
 ### Kubelet Security
 Default location for the Kubelet file:
@@ -277,6 +316,39 @@ Note: When applying gvisor runtime to a deployment and the edit is not taking, e
 
 
 ## Supply Chain Security
+### BOM
+`bom` is a utility that lets you create, view and transform Software Bills of Materials (SBOMs). `bom` was created as part of the project to create an SBOM for the Kubernetes project. It enables software authors to generate an SBOM for their projects in a simple, yet powerful way.
+
+Resources:
+
+- [Github Repo](https://github.com/kubernetes-sigs/bom) (Official)
+- [Rough walk through on LinkedIn](https://www.linkedin.com/pulse/sbom-everything-you-need-know-cks-exam-puru-tuladhar-vj2cf)
+- No BS, [commands to run](https://github.com/kubesimplify/cks-certification/blob/main/sbom/README.md) and test
+
+Install BOM
+```
+wget https://github.com/kubernetes-sigs/bom/releases/download/v0.6.0/bom-amd64-linux
+chmod +x bom-amd64-linux 
+sudo mv bom-amd64-linux /usr/local/bin/bom
+```
+
+Use bom to generate sbom for controller manager image
+```
+bom generate spdx-json \
+    --image registry.k8s.io/kube-controller-manager:v1.32.0 \
+    --output ./sbom1.json
+```
+
+View and Query SBOM Info
+```
+# Visualize SBOM
+$ bom document outline kube-apiserver.spdx
+
+# Query for packages matching name "base", and show their versions
+$ bom document query kube-apiserver.spdx "name:base" --fields "name,version"        
+```
+
+
 ### Trivy Scanning Engine
 * Aqua (boooooo), developed a free image scanner for anyone to use. Best to understand the syntax of container scanning with this bad boy:
 
