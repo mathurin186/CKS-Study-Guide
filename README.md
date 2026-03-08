@@ -1,6 +1,6 @@
 
 # CKS-Study-Guide
-  ![CKS](https://devopscube.com/wp-content/uploads/2021/04/CKS-Certification-min.png)
+  ![CKS](https://devopscube.com/cks-exam-guide-tips/)
 
 Study Guide for the Certified Kubernetes Security Specialist Exam
 Exam Syllabus
@@ -204,6 +204,8 @@ spec:
 
 
 ### Kubelet Security
+Ports: 10250 (Service API with full access, 10255 (Servive that allows unauthenticated Read Only access)
+
 Default location for the Kubelet file:
 ```
 /var/lib/kubelet/config.yaml
@@ -260,7 +262,7 @@ $ curl -sSX POST --data-binary @pod.yaml https://v2.kubesec.io/scan
 Running the API locally
 $ ```kubesec http 8080 &```
 
-$ ```kubesec scan pod.yaml -o pod_report.json -o json```
+$ ```kubesec scan pod.yaml -o pod_report.json```
 
 ### [_AppArmor_](https://kubernetes.io/docs/tutorials/security/apparmor/)
 Default directory for profiles:
@@ -400,6 +402,12 @@ ENTRYPOINT ["/myapp"]
 ```
 
 This is now the correct change to make a more secure footprint.
+
+### Creating Containers to Share PID
+```
+podman run --name app1 -d nginx:alpine sleep infinity
+podman run --name app2 --pid=container:app1 -d nginx:alpine sleep infinity
+```
 
 ### ImagePolicyWebhook
 The [ImagePolicyWebhook](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#imagepolicywebhook) admission controller allows a backend webhook to make admission decisions. This admission controller is disabled by default.
